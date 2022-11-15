@@ -16,9 +16,10 @@ const RestaruntCard: React.FC<Props> = ({ name, onPress }) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#efefe",
-    padding: "16",
-    marginTop: "8",
+    backgroundColor: "#e0e0e0",
+    padding: 16,
+    marginTop: 8,
+    borderRadius:10
   },
 });
 

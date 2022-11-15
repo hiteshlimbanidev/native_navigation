@@ -5,12 +5,18 @@ import Explore from "./screens/Explore";
 import Profile from "./screens/Profile";
 import ResturantsScreen from "./screens/Resturants";
 
-const RootStack = createStackNavigator();
+export type RootStackParams = {
+  Explore;
+  Resturants;
+  Profile;
+};
+
+const RootStack = createStackNavigator<RootStackParams>();
 
 const App = () => {
   return (
     <NavigationContainer>
-      <RootStack.Navigator>
+      <RootStack.Navigator initialRouteName="Explore">
         <RootStack.Screen name="Resturants" component={ResturantsScreen} />
         <RootStack.Screen name="Explore" component={Explore} />
         <RootStack.Screen name="Profile" component={Profile} />
