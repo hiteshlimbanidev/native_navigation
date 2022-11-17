@@ -2,18 +2,52 @@ import { ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import RestaruntCard from "../Components/RestaruntCard";
 import Menu from "../Components/Menu";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { RootStackParams } from "../App";
 
-const ResturantsScreen = () => {
+type Props = NativeStackScreenProps<RootStackParams, "Resturants">;
+
+const ResturantsScreen = ({ navigation }: Props) => {
   return (
     <View style={styles.container}>
       <ScrollView>
         <Text style={styles.screenTitle}>Resturants Screen</Text>
-        <RestaruntCard name="Sushi resturant" onPress={() => {}} />
-        <RestaruntCard name="Burger resturant" onPress={() => {}} />
-        <RestaruntCard name="Pizza resturant" onPress={() => {}} />
-        <RestaruntCard name="Panjabi resturant" onPress={() => {}} />
-        <RestaruntCard name="Gujrati resturant" onPress={() => {}} />
-        <RestaruntCard name="South indian resturant" onPress={() => {}} />
+        <RestaruntCard
+          name="Sushi resturant"
+          onPress={(name) => {
+            navigation.navigate("Resturant", { name });
+          }}
+        />
+        <RestaruntCard
+          name="Burger resturant"
+          onPress={(name) => {
+            navigation.navigate("Resturant", { name });
+          }}
+        />
+        <RestaruntCard
+          name="Pizza resturant"
+          onPress={(name) => {
+            navigation.navigate("Resturant", { name });
+          }}
+        />
+        <RestaruntCard
+          name="Panjabi resturant"
+          onPress={(name) => {
+            navigation.navigate("Resturant", { name });
+          }}
+        />
+        <RestaruntCard
+          name="Gujrati resturant"
+          onPress={(name) => {
+            navigation.navigate("Resturant", { name });
+          }}
+        />
+        <RestaruntCard
+          name="South indian resturant"
+          onPress={(name) => {
+            navigation.navigate("Resturant", { name });
+          }}
+        />
         <Menu />
       </ScrollView>
     </View>
