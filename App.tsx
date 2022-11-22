@@ -3,7 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { StyleSheet } from "react-native";
 import Explore from "./screens/Explore";
 import Profile from "./screens/Profile";
-import ResturantScreen from "./screens/resturant";
+import RestaurantScreen from "../nativeroute/screens/Resturant";
 import ResturantsScreen from "./screens/Resturants";
 
 export type RootStackParams = {
@@ -24,7 +24,7 @@ const App = () => {
         <RootStack.Screen name="Resturants" component={ResturantsScreen} />
         <RootStack.Screen name="Explore" component={Explore} />
         <RootStack.Screen name="Profile" component={Profile} />
-        <RootStack.Screen name="Resturant" component={ResturantScreen} />
+        <RootStack.Screen name="Resturant" component={RestaurantScreen} />
       </RootStack.Navigator>
     </NavigationContainer>
   );
