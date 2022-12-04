@@ -3,6 +3,7 @@ import React from "react";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParams } from "../App";
 import RestaruntCard from "../Components/RestaruntCard";
+import TopBackNavigation from "../Components/TopBackNavigation";
 
 type Props = NativeStackScreenProps<RootStackParams, "Resturant">;
 
@@ -10,7 +11,7 @@ const RestaurantScreen = ({ route, navigation }: Props) => {
   return (
     <View style={styles.container}>
       <Text style={styles.Screentitle}>{route.params.name}</Text>
-
+      <TopBackNavigation />
       <Text>Related Restaurants</Text>
       <RestaruntCard
         name="Sushi 1"
