@@ -1,9 +1,9 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import RestaruntCard from "../Components/RestaruntCard";
-import Menu from "../Components/Menu";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { RootStackParams } from "../App";
+import { RootStackParams } from "../AppTabNavigator";
+import TopDrawerNavigation from "../Components/TopDrawerNavigation";
 
 type Props = NativeStackScreenProps<RootStackParams, "ExploreStack">;
 
@@ -11,6 +11,7 @@ const Explore = ({ navigation }: Props) => {
   return (
     <View style={styles.container}>
       <Text style={styles.Screentitle}>Restaurants</Text>
+      <TopDrawerNavigation />
       <View>
         <Text style={styles.Sectiontitle}>Restaurants near you</Text>
         <RestaruntCard
@@ -49,7 +50,7 @@ const Explore = ({ navigation }: Props) => {
           }}
         />
       </View>
-      <Menu />
+      
     </View>
   );
 };

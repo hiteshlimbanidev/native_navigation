@@ -1,9 +1,10 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { RootStackParams } from "../App";
+import { RootStackParams } from "../AppTabNavigator";
 import RestaruntCard from "../Components/RestaruntCard";
 import TopBackNavigation from "../Components/TopBackNavigation";
+import TopDrawerNavigation from "../Components/TopDrawerNavigation";
 
 type Props = NativeStackScreenProps<RootStackParams, "Resturant">;
 
@@ -11,7 +12,8 @@ const RestaurantScreen = ({ route, navigation }: Props) => {
   return (
     <View style={styles.container}>
       <Text style={styles.Screentitle}>{route.params.name}</Text>
-      <TopBackNavigation />
+      {/* <TopBackNavigation /> */}
+      <TopDrawerNavigation />
       <Text>Related Restaurants</Text>
       <RestaruntCard
         name="Sushi 1"

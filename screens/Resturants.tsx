@@ -1,9 +1,9 @@
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import RestaruntCard from "../Components/RestaruntCard";
-import Menu from "../Components/Menu";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { RootStackParams } from "../App";
+import { RootStackParams } from "../AppTabNavigator";
+import TopDrawerNavigation from "../Components/TopDrawerNavigation";
 
 type Props = NativeStackScreenProps<RootStackParams, "ResturantsStack">;
 
@@ -11,6 +11,8 @@ const ResturantsScreen = ({ navigation }: Props) => {
   return (
     <>
       <View style={styles.container}>
+        <TopDrawerNavigation />
+
         <ScrollView>
           <Text style={styles.screenTitle}>Resturants Screen</Text>
           <RestaruntCard
@@ -49,7 +51,6 @@ const ResturantsScreen = ({ navigation }: Props) => {
               navigation.navigate("Resturant", { name });
             }}
           />
-          <Menu />
         </ScrollView>
       </View>
     </>

@@ -6,13 +6,12 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { StyleSheet } from "react-native";
 import Explore from "./screens/Explore";
 import Profile from "./screens/Profile";
-import RestaurantScreen from "../nativeroute/screens/Resturant";
+import RestaurantScreen from "./screens/Resturant";
 import ResturantsScreen from "./screens/Resturants";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import RestaurantIcon from "./icons/RestaurantIcon";
 import ExploreIcon from "./icons/ExploreIcon";
 import ProfileIcon from "./icons/ProfileIcon";
-import { createDrawerNavigator } from "@react-navigation/drawer";
 
 export type RootStackParams = {
   ExploreStack: undefined;
@@ -30,7 +29,7 @@ export type RestaurantsStackParam = {
   };
 };
 
-const RootStack = createDrawerNavigator<RootStackParams>();
+const RootStack = createBottomTabNavigator<RootStackParams>();
 
 const RestaurantsStack = createNativeStackNavigator<RestaurantsStackParam>();
 
@@ -77,38 +76,38 @@ const App = () => {
         initialRouteName="ExploreStack"
         screenOptions={{
           headerShown: false,
-          drawerActiveTintColor: "#e67a54",
-          drawerInactiveTintColor: "gray",
+          tabBarActiveTintColor: "#e67a54",
+          tabBarInactiveTintColor: "gray",
         }}
       >
         <RootStack.Screen
           name="ExploreStack"
           component={ExploreStackScreen}
           options={{
-            drawerIcon: ({ color, size }) => (
+            tabBarIcon: ({ color, size }) => (
               <ExploreIcon color={color} size={size} />
             ),
-            drawerLabel: "Explore",
+            tabBarLabel: "Explore",
           }}
         />
         <RootStack.Screen
           name="ResturantsStack"
           component={ResturantsStackScreen}
           options={{
-            drawerIcon: ({ color, size }) => (
+            tabBarIcon: ({ color, size }) => (
               <RestaurantIcon color={color} size={size} />
             ),
-            drawerLabel: "Resturants",
+            tabBarLabel: "Resturants",
           }}
         />
         <RootStack.Screen
           name="Profile"
           component={Profile}
           options={{
-            drawerIcon: ({ color, size }) => (
+            tabBarIcon: ({ color, size }) => (
               <ProfileIcon color={color} size={size} />
             ),
-            drawerLabel: "Profile",
+            tabBarLabel: "Profile",
           }}
         />
         {/* <RootStack.Screen name="Resturant" component={RestaurantScreen} /> */}
